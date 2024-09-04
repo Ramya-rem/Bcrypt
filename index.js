@@ -29,7 +29,7 @@ app.post('/login',async(req,res)=>{
         return res.json({msg: "Password incorrect"}).status(400);
     }
 
-    const token=jsonwebtoken.sign({username:arr.username},secret,{expiresIn:"1h"});
+    const token=jsonwebtoken.sign({username:user.username},secret,{expiresIn:"1h"});
     res.json({token});
    
 })
